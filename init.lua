@@ -40,14 +40,14 @@ if input then
 	input = nil
 end
 
-minetest.register_node("default:permafrost", {
+minetest.register_node(modname .. ":permafrost", {
 	description = S("Permafrost"),
 	tiles = { "default_permafrost.png" },
 	groups = { cracky = 3 },
 	sounds = mcl_sounds.node_sound_dirt_defaults(),
 })
 
-minetest.register_node("default:permafrost_with_stones", {
+minetest.register_node(modname .. ":permafrost_with_stones", {
 	description = S("Permafrost with Stones"),
 	tiles = { "default_permafrost.png^default_stones.png",
 		"default_permafrost.png",
@@ -56,7 +56,7 @@ minetest.register_node("default:permafrost_with_stones", {
 	sounds = mcl_sounds.node_sound_gravel_defaults(),
 })
 
-minetest.register_node("default:permafrost_with_moss", {
+minetest.register_node(modname .. ":permafrost_with_moss", {
 	description = S("Permafrost with Moss"),
 	tiles = { "default_moss.png", "default_permafrost.png",
 		{
