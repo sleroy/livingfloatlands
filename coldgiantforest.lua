@@ -90,7 +90,7 @@ minetest.register_node("livingfloatlands:giantforest_paleoredwood_leaves", {
   },
   sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-  after_place_node = default.after_place_leaves,
+
 })
 
 minetest.register_node("livingfloatlands:giantforest_paleoredwood_sapling", {
@@ -134,7 +134,7 @@ minetest.register_node("livingfloatlands:giantforest_paleoredwood_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
   "livingfloatlands_giantforest_paleoredwood_wood",
   "livingfloatlands:giantforest_paleoredwood_wood",
   { choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -144,7 +144,7 @@ stairs.register_stair_and_slab(
   mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
   "livingfloatlands_giantforest_paleoredwood_trunk",
   "livingfloatlands:giantforest_paleoredwood_trunk",
   { choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -155,7 +155,7 @@ stairs.register_stair_and_slab(
   mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
   "livingfloatlands:gate_paleoredwood_wood",
   {
     description = S("Paleo Redwood Wood Fence Gate"),
@@ -167,7 +167,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
   "livingfloatlands:fence_paleoredwood_wood",
   {
     description = S("Paleo Redwood Fence"),
@@ -182,7 +182,7 @@ default.register_fence(
   }
 )
 
-default.register_fence_rail(
+register_fence_rail(
   "livingfloatlands:fence_rail_paleoredwood_wood",
   {
     description = S("Paleo Redwood Fence Rail"),

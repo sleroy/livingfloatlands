@@ -142,7 +142,7 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_fruit", {
   },
   sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-  after_place_node = default.after_place_leaves,
+
 })
 
 -- New paleojungle clubmoss tree
@@ -213,7 +213,7 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_leaves", {
   },
   sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-  after_place_node = default.after_place_leaves,
+
 })
 
 minetest.register_node("livingfloatlands:paleojungle_clubmoss_sapling", {
@@ -257,7 +257,7 @@ minetest.register_node("livingfloatlands:paleojungle_clubmoss_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
   "livingfloatlands_paleojungle_clubmoss_wood",
   "livingfloatlands:paleojungle_clubmoss_wood",
   { choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -267,7 +267,7 @@ stairs.register_stair_and_slab(
   mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
   "livingfloatlands_paleojungle_clubmoss_trunk",
   "livingfloatlands:paleojungle_clubmoss_trunk",
   { choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -278,7 +278,7 @@ stairs.register_stair_and_slab(
   mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
   "livingfloatlands:gate_clubmoss_wood",
   {
     description = S("Clubmoss Wood Fence Gate"),
@@ -290,7 +290,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
   "livingfloatlands:fence_clubmoss_wood",
   {
     description = S("Clubmoss Fence"),
@@ -305,7 +305,7 @@ default.register_fence(
   }
 )
 
-default.register_fence_rail(
+register_fence_rail(
   "livingfloatlands:fence_rail_clubmoss_wood",
   {
     description = S("Clubmoss Fence Rail"),
@@ -433,7 +433,7 @@ minetest.register_node("livingfloatlands:paleojungle_conifere_leaves", {
   },
   sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-  after_place_node = default.after_place_leaves,
+
 })
 
 minetest.register_node("livingfloatlands:paleojungle_conifere_sapling", {
@@ -477,7 +477,7 @@ minetest.register_node("livingfloatlands:paleojungle_conifere_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
   "livingfloatlands_paleojungle_conifere_wood",
   "livingfloatlands:paleojungle_conifere_wood",
   { choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -487,7 +487,7 @@ stairs.register_stair_and_slab(
   mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
   "livingfloatlands_paleojungle_conifere_trunk",
   "livingfloatlands:paleojungle_conifere_trunk",
   { choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -498,7 +498,7 @@ stairs.register_stair_and_slab(
   mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
   "livingfloatlands:gate_conifere_wood",
   {
     description = S("Conifere Wood Fence Gate"),
@@ -510,7 +510,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
   "livingfloatlands:fence_conifere_wood",
   {
     description = S("Conifere Fence"),
@@ -525,7 +525,7 @@ default.register_fence(
   }
 )
 
-default.register_fence_rail(
+register_fence_rail(
   "livingfloatlands:fence_rail_conifere_wood",
   {
     description = S("Conifere Fence Rail"),
@@ -639,7 +639,7 @@ minetest.register_node("livingfloatlands:paleojungle_paleopalm_leaves", {
   },
   sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-  after_place_node = default.after_place_leaves,
+
 })
 
 minetest.register_node("livingfloatlands:paleojungle_paleopalm_sapling", {
@@ -683,7 +683,7 @@ minetest.register_node("livingfloatlands:paleojungle_paleopalm_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
   "livingfloatlands_paleojungle_paleopalm_wood",
   "livingfloatlands:paleojungle_paleopalm_wood",
   { choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -693,7 +693,7 @@ stairs.register_stair_and_slab(
   mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
   "livingfloatlands_paleojungle_paleopalm_trunk",
   "livingfloatlands:paleojungle_paleopalm_trunk",
   { choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -704,7 +704,7 @@ stairs.register_stair_and_slab(
   mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
   "livingfloatlands:gate_paleopalm_wood",
   {
     description = S("Paleo Palm Wood Fence Gate"),
@@ -716,7 +716,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
   "livingfloatlands:fence_paleopalm_wood",
   {
     description = S("Paleo Palm Fence"),
@@ -731,7 +731,7 @@ default.register_fence(
   }
 )
 
-default.register_fence_rail(
+register_fence_rail(
   "livingfloatlands:fence_rail_paleopalm_wood",
   {
     description = S("Paleo Palm Fence Rail"),

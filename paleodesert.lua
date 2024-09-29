@@ -264,7 +264,7 @@ minetest.register_node("livingfloatlands:paleodesert_joshua_leaves", {
 	},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-	after_place_node = default.after_place_leaves,
+
 })
 
 minetest.register_node("livingfloatlands:paleodesert_joshua_sapling", {
@@ -308,7 +308,7 @@ minetest.register_node("livingfloatlands:paleodesert_joshua_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_paleodesert_joshua_wood",
 	"livingfloatlands:paleodesert_joshua_wood",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -318,7 +318,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_paleodesert_joshua_trunk",
 	"livingfloatlands:paleodesert_joshua_trunk",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -329,7 +329,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
 	"livingfloatlands:gate_joshua_wood",
 	{
 		description = S("Joshua Wood Fence Gate"),
@@ -341,7 +341,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
 	"livingfloatlands:fence_joshua_wood",
 	{
 		description = S("Joshua Fence"),
@@ -356,7 +356,7 @@ default.register_fence(
 	}
 )
 
-default.register_fence_rail(
+register_fence_rail(
 	"livingfloatlands:fence_rail_joshua_wood",
 	{
 		description = S("Joshua Fence Rail"),
@@ -484,7 +484,7 @@ minetest.register_node("livingfloatlands:paleodesert_paleopine_leaves", {
 	},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-	after_place_node = default.after_place_leaves,
+
 })
 
 minetest.register_node("livingfloatlands:paleodesert_paleopine_sapling", {
@@ -528,7 +528,7 @@ minetest.register_node("livingfloatlands:paleodesert_paleopine_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_paleodesert_paleopine_wood",
 	"livingfloatlands:paleodesert_paleopine_wood",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -538,7 +538,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_paleodesert_paleopine_trunk",
 	"livingfloatlands:paleodesert_paleopine_trunk",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -549,7 +549,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
 	"livingfloatlands:gate_paleopine_wood",
 	{
 		description = S("Paleopine Wood Fence Gate"),
@@ -561,7 +561,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
 	"livingfloatlands:fence_paleopine_wood",
 	{
 		description = S("Paleopine Fence"),
@@ -576,7 +576,7 @@ default.register_fence(
 	}
 )
 
-default.register_fence_rail(
+register_fence_rail(
 	"livingfloatlands:fence_rail_paleopine_wood",
 	{
 		description = S("Paleopine Fence Rail"),

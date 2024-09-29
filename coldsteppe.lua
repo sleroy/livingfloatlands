@@ -12,7 +12,7 @@ minetest.register_node("livingfloatlands:coldsteppe_litter", {
 			tileable_vertical = false
 		} },
 	groups = { crumbly = 3, soil = 1, spreading_dirt_type = 1 },
-	drop = "default:permafrost",
+	drop = "livingfloatlands:permafrost",
 	sounds = mcl_sounds.node_sound_dirt_defaults({
 		footstep = { name = "default_grass_footstep", gain = 0.25 },
 	}),
@@ -22,7 +22,7 @@ minetest.register_biome({
 	name = "livingfloatlands:coldsteppe",
 	node_top = "livingfloatlands:coldsteppe_litter",
 	depth_top = 1,
-	node_filler = "default:permafrost",
+	node_filler = "livingfloatlands:permafrost",
 	depth_filler = 6,
 	node_riverbed = "mcl_core:sand",
 	depth_riverbed = 3,
@@ -392,8 +392,6 @@ minetest.register_node("livingfloatlands:coldsteppe_pine_leaves", {
 		}
 	},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
-
-	after_place_node = default.after_place_leaves,
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine_sapling", {
@@ -437,7 +435,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_pine_wood",
 	"livingfloatlands:coldsteppe_pine_wood",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -447,7 +445,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_pine_trunk",
 	"livingfloatlands:coldsteppe_pine_trunk",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -458,7 +456,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
 	"livingfloatlands:gate_pine_wood",
 	{
 		description = S("Red Pine Wood Fence Gate"),
@@ -470,7 +468,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
 	"livingfloatlands:fence_pine_wood",
 	{
 		description = S("Red Pine Fence"),
@@ -485,7 +483,7 @@ default.register_fence(
 	}
 )
 
-default.register_fence_rail(
+register_fence_rail(
 	"livingfloatlands:fence_rail_pine_wood",
 	{
 		description = S("Red Pine Fence Rail"),
@@ -646,7 +644,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine2_leaves", {
 	},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-	after_place_node = default.after_place_leaves,
+
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine2_sapling", {
@@ -690,7 +688,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine2_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_pine2_wood",
 	"livingfloatlands:coldsteppe_pine2_wood",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -700,7 +698,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_pine2_trunk",
 	"livingfloatlands:coldsteppe_pine2_trunk",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -711,7 +709,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
 	"livingfloatlands:gate_pine2_wood",
 	{
 		description = S("Norway Spruce Wood Fence Gate"),
@@ -723,7 +721,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
 	"livingfloatlands:fence_pine2_wood",
 	{
 		description = S("Norway Spruce Fence"),
@@ -738,7 +736,7 @@ default.register_fence(
 	}
 )
 
-default.register_fence_rail(
+register_fence_rail(
 	"livingfloatlands:fence_rail_pine2_wood",
 	{
 		description = S("Norway Spruce Fence Rail"),
@@ -891,7 +889,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_leaves", {
 	},
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-	after_place_node = default.after_place_leaves,
+
 })
 
 minetest.register_node("livingfloatlands:coldsteppe_pine3_sapling", {
@@ -935,7 +933,7 @@ minetest.register_node("livingfloatlands:coldsteppe_pine3_sapling", {
 })
 
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_pine3_wood",
 	"livingfloatlands:coldsteppe_pine3_wood",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -945,7 +943,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_pine3_trunk",
 	"livingfloatlands:coldsteppe_pine3_trunk",
 	{ choppy = 2, oddly_breakable_by_hand = 1, flammable = 3 },
@@ -956,7 +954,7 @@ stairs.register_stair_and_slab(
 	mcl_sounds.node_sound_wood_defaults()
 )
 
-doors.register_fencegate(
+mcl_fences.register_fence_and_fence_gate_def(
 	"livingfloatlands:gate_pine3_wood",
 	{
 		description = S("Siberian Larix Wood Fence Gate"),
@@ -968,7 +966,7 @@ doors.register_fencegate(
 )
 
 
-default.register_fence(
+mcl_fences.register_fence_def(
 	"livingfloatlands:fence_pine3_wood",
 	{
 		description = S("Siberian Larix Fence"),
@@ -983,7 +981,7 @@ default.register_fence(
 	}
 )
 
-default.register_fence_rail(
+register_fence_rail(
 	"livingfloatlands:fence_rail_pine3_wood",
 	{
 		description = S("Siberian Larix Fence Rail"),
@@ -1152,11 +1150,11 @@ minetest.register_decoration({
 
 -- Bricks slabs and walls
 
-walls.register(":livingfloatlands:coldsteppe_brick_wall", S "Coldsteppe Granite Brick Wall",
+mcl_walls.register_wall(":livingfloatlands:coldsteppe_brick_wall", S "Coldsteppe Granite Brick Wall",
 	"livingfloatlands_coldsteppe_rock_brick.png",
 	"livingfloatlands:coldsteppe_brick_wall", mcl_sounds.node_sound_stone_defaults())
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_rock_brick",
 	"livingfloatlands:coldsteppe_rock_brick",
 	{ cracky = 1, oddly_breakable_by_hand = 0, flammable = 0 },
@@ -1192,11 +1190,11 @@ minetest.register_craft({
 
 })
 
-walls.register(":livingfloatlands:coldsteppe_brick2_wall", S "Coldsteppe Limestone Brick Wall",
+mcl_walls.register_wall(":livingfloatlands:coldsteppe_brick2_wall", S "Coldsteppe Limestone Brick Wall",
 	"livingfloatlands_coldsteppe_rock2_brick.png",
 	"livingfloatlands:coldsteppe_brick2_wall", mcl_sounds.node_sound_stone_defaults())
 
-stairs.register_stair_and_slab(
+mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_rock2_brick",
 	"livingfloatlands:coldsteppe_rock2_brick",
 	{ cracky = 1, oddly_breakable_by_hand = 0, flammable = 0 },

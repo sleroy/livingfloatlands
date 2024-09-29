@@ -69,6 +69,159 @@ minetest.register_node(modname .. ":permafrost_with_moss", {
 	}),
 })
 
+local fence_collision_extra = minetest.settings:get_bool("enable_fence_tall") and 3 / 8 or 0
+function register_fence_rail(name, def)
+	minetest.register_craft({
+		output = name .. " 16",
+		recipe = {
+			{ def.material, def.material },
+			{ "",           "" },
+			{ def.material, def.material },
+		}
+	})
+
+	local fence_rail_texture = "default_fence_rail_overlay.png^" .. def.texture ..
+		"^default_fence_rail_overlay.png^[makealpha:255,126,126"
+	-- Allow almost everything to be overridden
+	local default_fields = {
+		paramtype = "light",
+		drawtype = "nodebox",
+		node_box = {
+			type = "connected",
+			fixed = { { -1 / 16, 3 / 16, -1 / 16, 1 / 16, 5 / 16, 1 / 16 },
+				{ -1 / 16, -3 / 16, -1 / 16, 1 / 16, -5 / 16, 1 / 16 } },
+			-- connect_top =
+			-- connect_bottom =
+			connect_front = { { -1 / 16, 3 / 16, -1 / 2, 1 / 16, 5 / 16, -1 / 16 },
+				{ -1 / 16, -5 / 16, -1 / 2, 1 / 16, -3 / 16, -1 / 16 } },
+			connect_left = { { -1 / 2, 3 / 16, -1 / 16, -1 / 16, 5 / 16, 1 / 16 },
+				{ -1 / 2, -5 / 16, -1 / 16, -1 / 16, -3 / 16, 1 / 16 } },
+			connect_back = { { -1 / 16, 3 / 16, 1 / 16, 1 / 16, 5 / 16, 1 / 2 },
+				{ -1 / 16, -5 / 16, 1 / 16, 1 / 16, -3 / 16, 1 / 2 } },
+			connect_right = { { 1 / 16, 3 / 16, -1 / 16, 1 / 2, 5 / 16, 1 / 16 },
+				{ 1 / 16, -5 / 16, -1 / 16, 1 / 2, -3 / 16, 1 / 16 } }
+		},
+		collision_box = {
+			type = "connected",
+			fixed = { -1 / 8, -1 / 2, -1 / 8, 1 / 8, 1 / 2 + fence_collision_extra, 1 / 8 },
+			-- connect_top =
+			-- connect_bottom =
+			connect_front = { -1 / 8, -1 / 2, -1 / 2, 1 / 8, 1 / 2 + fence_collision_extra, -1 / 8 },
+			connect_left = { -1 / 2, -1 / 2, -1 / 8, -1 / 8, 1 / 2 + fence_collision_extra, 1 / 8 },
+			connect_back = { -1 / 8, -1 / 2, 1 / 8, 1 / 8, 1 / 2 + fence_collision_extra, 1 / 2 },
+			connect_right = { 1 / 8, -1 / 2, -1 / 8, 1 / 2, 1 / 2 + fence_collision_extra, 1 / 8 }
+		},
+		connects_to = { "group:fence", "group:wall" },
+		inventory_image = fence_rail_texture,
+		wield_image = fence_rail_texture,
+		tiles = { def.texture },
+		sunlight_propagates = true,
+		is_ground_content = false,
+		groups = {},
+	}
+	for k, v in pairs(default_fields) do
+		if def[k] == nil then
+			def[k] = v
+		end
+	end
+
+	-- Always add to the fence group, even if no group provided
+	def.groups.fence = 1
+
+	def.texture = nil
+	def.material = nil
+
+	minetest.register_node(name, def)
+end
+
+function register_fencegate(name, def)
+	local fence = {
+		description = def.description,
+		drawtype = "mesh",
+		tiles = {},
+		paramtype = "light",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		is_ground_content = false,
+		drop = name .. "_closed",
+		connect_sides = { "left", "right" },
+		groups = def.groups,
+		sounds = def.sounds,
+
+		on_rightclick = function(pos, node, clicker, itemstack, pointed_thing)
+			doors.fencegate_toggle(pos, node, clicker)
+
+			return itemstack
+		end,
+
+		selection_box = {
+			type = "fixed",
+			fixed = { -1 / 2, -1 / 2, -1 / 4, 1 / 2, 1 / 2, 1 / 4 }
+		}
+	}
+
+	if type(def.texture) == "string" then
+		fence.tiles[1] = { name = def.texture, backface_culling = true }
+	elseif def.texture.backface_culling == nil then
+		fence.tiles[1] = table.copy(def.texture)
+		fence.tiles[1].backface_culling = true
+	else
+		fence.tiles[1] = def.texture
+	end
+
+	if not fence.sounds then
+		fence.sounds = default.node_sound_wood_defaults()
+	end
+
+	fence.groups.fence = 1
+
+	-- mesecons support
+	if minetest.get_modpath("mesecons") then
+		local function fencegate_switch(pos, node)
+			doors.fencegate_toggle(pos, node, { is_fake_player = true })
+		end
+
+		fence.mesecons = {
+			effector = {
+				action_on = fencegate_switch,
+				action_off = fencegate_switch
+			}
+		}
+	end
+
+	local fence_closed = table.copy(fence)
+
+	fence_closed.mesh = "doors_fencegate_closed.obj"
+	fence_closed._gate = name .. "_open"
+	fence_closed._gate_sound = "doors_fencegate_open"
+	fence_closed.collision_box = {
+		type = "fixed",
+		fixed = { -1 / 2, -1 / 2, -1 / 8, 1 / 2, 1 / 2 + fence_collision_extra, 1 / 8 }
+	}
+
+	local fence_open = table.copy(fence)
+
+	fence_open.mesh = "doors_fencegate_open.obj"
+	fence_open._gate = name .. "_closed"
+	fence_open._gate_sound = "doors_fencegate_close"
+	fence_open.groups.not_in_creative_inventory = 1
+	fence_open.collision_box = {
+		type = "fixed",
+		fixed = { { -1 / 2, -1 / 2, -1 / 8, -3 / 8, 1 / 2 + fence_collision_extra, 1 / 8 },
+			{ -1 / 2, -3 / 8, -1 / 2, -3 / 8, 3 / 8,                         0 } },
+	}
+
+	minetest.register_node(":" .. name .. "_closed", fence_closed)
+	minetest.register_node(":" .. name .. "_open", fence_open)
+
+	minetest.register_craft({
+		output = name .. "_closed",
+		recipe = {
+			{ "group:stick", def.material, "group:stick" },
+			{ "group:stick", def.material, "group:stick" }
+		}
+	})
+end
 
 -- Animals
 dofile(path .. "carnotaurus.lua")     --
