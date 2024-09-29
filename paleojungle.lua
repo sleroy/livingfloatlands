@@ -12,7 +12,7 @@ minetest.register_node("livingfloatlands:paleojungle_litter", {
       tileable_vertical = false
     } },
   groups = { crumbly = 3, soil = 1, spreading_dirt_type = 1 },
-  drop = "default:dirt",
+  drop = "mcl_core:dirt",
   sounds = mcl_sounds.node_sound_dirt_defaults({
     footstep = { name = "default_grass_footstep", gain = 0.25 },
   }),
@@ -22,7 +22,7 @@ minetest.register_biome({
   name = "livingfloatlands:paleojungle",
   node_top = "livingfloatlands:paleojungle_litter",
   depth_top = 1,
-  node_filler = "default:dirt",
+  node_filler = "mcl_core:dirt",
   depth_filler = 4,
   node_riverbed = "mcl_core:sand",
   depth_riverbed = 2,

@@ -69,7 +69,7 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
 	view_range = 10,
 	replace_rate = 10,
 	replace_what = { "farming:soil", "farming:soil_wet" },
-	replace_with = "default:dirt",
+	replace_with = "mcl_core:dirt",
 	on_rightclick = function(self, clicker)
 		-- feed or tame
 		if mobs:feed_tame(self, clicker, 4, false, true) then return end
@@ -81,7 +81,7 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
 
 if minetest.get_modpath("ethereal") then
 	spawn_on = { "ethereal:mushroom_dirt", "ethereal:crystal_dirt", "livingfloatlands:permafrost_with_moss",
-		"default:dirt_with_snow", "default:snow" }
+		"mcl_core:dirt_with_snow", "default:snow" }
 end
 
 if not mobs.custom_spawn_livingfloatlands then

@@ -12,7 +12,7 @@ minetest.register_node("livingfloatlands:giantforest_litter", {
 			tileable_vertical = false
 		} },
 	groups = { crumbly = 3, soil = 1, spreading_dirt_type = 1 },
-	drop = "default:dirt",
+	drop = "mcl_core:dirt",
 	sounds = mcl_sounds.node_sound_dirt_defaults({
 		footstep = { name = "default_grass_footstep", gain = 0.25 },
 	}),
@@ -22,9 +22,9 @@ minetest.register_biome({
 	name = "livingfloatlands:giantforest",
 	node_top = "livingfloatlands:giantforest_litter",
 	depth_top = 1,
-	node_filler = "default:dirt",
+	node_filler = "mcl_core:dirt",
 	depth_filler = 2,
-	node_riverbed = "default:clay",
+	node_riverbed = "mcl_core:clay",
 	depth_riverbed = 1,
 	node_dungeon = "mcl_core:cobble",
 	node_dungeon_alt = "mcl_core:mossycobble",

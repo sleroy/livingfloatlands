@@ -223,6 +223,12 @@ function register_fencegate(name, def)
 	})
 end
 
+-- MineClone2
+-- MineClone2 support
+if minetest.get_modpath('mcl_core') and minetest.global_exists('mcl_core') then
+	dofile(path .. '/mod_support_mcl_aliases.lua')
+end
+
 -- Animals
 dofile(path .. "carnotaurus.lua")     --
 dofile(path .. "nigersaurus.lua")     --

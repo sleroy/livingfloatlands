@@ -74,8 +74,8 @@ mobs:register_mob("livingfloatlands:rhamphorhynchus", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:grove_dirt", "ethereal:bamboo_dirt", "default:dirt_with_rainforest_litter",
-		"default:dirt_with_grass", "mcl_core:sand" }
+	spawn_on = { "ethereal:grove_dirt", "ethereal:bamboo_dirt", "mcl_core:dirt_with_rainforest_litter",
+		"mcl_core:dirt_with_grass", "mcl_core:sand" }
 end
 
 if not mobs.custom_spawn_livingfloatlands then
