@@ -77,10 +77,8 @@ mobs:register_mob("livingfloatlands:oviraptor", {
 })
 
 
-if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "default:desert_sand", "default:desert_sandstone",
+	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "default:desert_sand", "mcl_core:desert_sandstone",
 		"mcl_core:sandstone" }
-end
 
 if not mobs.custom_spawn_livingfloatlands then
 	mobs:spawn({

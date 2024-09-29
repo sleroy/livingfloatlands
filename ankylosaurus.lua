@@ -72,7 +72,7 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:sand", "default:desert_sandstone",
+	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:sand", "mcl_core:desert_sandstone",
 		"mcl_core:sandstone", "default:dry_dirt_with_dry_grass" }
 end
 
