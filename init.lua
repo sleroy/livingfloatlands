@@ -39,6 +39,7 @@ if input then
 	input:close()
 	input = nil
 end
+mobs.custom_spawn_livingfloatlands = false
 
 minetest.register_node(modname .. ":permafrost", {
 	description = S("Permafrost"),
