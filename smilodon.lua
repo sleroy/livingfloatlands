@@ -75,19 +75,19 @@ if minetest.get_modpath("ethereal") then
 		"mcl_core:dirt_with_snow", "default:snow" }
 end
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:smilodon",
-		nodes = { "livingfloatlands:coldsteppe_litter" },
-		neighbors = { "livingfloatlands:coldsteppe_shrub", "livingfloatlands:coldsteppe_grass", "livingfloatlands:coldsteppe_grass2", "livingfloatlands:coldsteppe_grass3" },
-		min_light = 0,
-		interval = 60,
-		chance = 2000, -- 15000
-		active_object_count = 1,
-		min_height = 6,
-		max_height = 31000,
 
-	})
-end
+mobs:spawn({
+	name = "livingfloatlands:smilodon",
+	nodes = { "livingfloatlands:coldsteppe_litter" },
+	neighbors = { "livingfloatlands:coldsteppe_shrub", "livingfloatlands:coldsteppe_grass", "livingfloatlands:coldsteppe_grass2", "livingfloatlands:coldsteppe_grass3" },
+	min_light = 0,
+	interval = 60,
+	chance = 2000, -- 15000
+
+	min_height = 6,
+	max_height = 31000,
+
+})
+
 
 mobs:register_egg("livingfloatlands:smilodon", ("Smilodon"), "asmilodon.png")

@@ -87,20 +87,18 @@ if minetest.get_modpath("ethereal") then
 	spawn_on = { "ethereal:grove_dirt", "ethereal:bamboo_dirt", "mcl_core:dirt_with_rainforest_litter" }
 end
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:gastornis",
-		nodes = { "livingfloatlands:giantforest_litter" },
-		neighbors = { "livingfloatlands:giantforest_paleoredwood_trunk", "livingfloatlands:giantforest_paleooak_trunk" },
-		min_light = 0,
-		interval = 60,
-		chance = 2000, -- 15000
-		active_object_count = 2,
-		min_height = 5,
-		max_height = 31000,
-		day_toggle = true,
-	})
-end
+mobs:spawn({
+	name = "livingfloatlands:gastornis",
+	nodes = { "livingfloatlands:giantforest_litter" },
+	neighbors = { "livingfloatlands:giantforest_paleoredwood_trunk", "livingfloatlands:giantforest_paleooak_trunk" },
+	min_light = 0,
+	interval = 60,
+	chance = 2000, -- 15000
+	min_height = 1,
+	max_height = 31000,
+	day_toggle = true,
+})
+
 
 
 mobs:register_egg("livingfloatlands:gastornis", ("Gastornis"), "agastornis.png", 0)

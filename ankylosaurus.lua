@@ -61,7 +61,8 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 
 	follow = { "mcl_core:apple", "mcl_core:dry_dirt_with_dry_grass", "farming:seed_wheat", "mcl_core:junglegrass", "farming:seed_oat", "livingfloatlands:paleodesert_joshua_sapling", "livingfloatlands:paleodesert_fern" },
 	view_range = 10,
-
+	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:sand", "mcl_core:desert_sandstone",
+		"mcl_core:sandstone", "mcl_core:dry_dirt_with_dry_grass" },
 	on_rightclick = function(self, clicker)
 		-- feed or tame
 		if mobs:feed_tame(self, clicker, 4, false, true) then return end
@@ -71,50 +72,43 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 })
 
 
-if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:sand", "mcl_core:desert_sandstone",
-		"mcl_core:sandstone", "mcl_core:dry_dirt_with_dry_grass" }
-end
+mobs:spawn({
+	name = "livingfloatlands:ankylosaurus",
+	nodes = { "livingfloatlands:paleodesert_litter", "livingfloatlands:paleojungle_litter" },
+	neighbors = { "livingfloatlands:paleodesert_fern", "livingfloatlands:puzzlegrass" },
+	min_light = 0,
+	interval = 60,
+	chance = 2000, -- 15000
+	min_height = 1,
+	max_height = 31000,
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:ankylosaurus",
-		nodes = { "livingfloatlands:paleodesert_litter" },
-		neighbors = { "livingfloatlands:paleodesert_fern", "livingfloatlands:puzzlegrass" },
-		min_light = 0,
-		interval = 60,
-		active_object_count = 3,
-		chance = 2000, -- 15000
-		min_height = 1,
-		max_height = 31000,
+	on_spawn = function(self, pos)
+		local nods = minetest.find_nodes_in_area_under_air(
+			{ x = pos.x - 4, y = pos.y - 3, z = pos.z - 4 },
+			{ x = pos.x + 4, y = pos.y + 3, z = pos.z + 4 },
+			{ "livingfloatlands:paleodesert_litter" })
 
-		on_spawn = function(self, pos)
-			local nods = minetest.find_nodes_in_area_under_air(
-				{ x = pos.x - 4, y = pos.y - 3, z = pos.z - 4 },
-				{ x = pos.x + 4, y = pos.y + 3, z = pos.z + 4 },
-				{ "livingfloatlands:paleodesert_litter" })
+		if nods and #nods > 0 then
+			-- min herd of 3
+			local iter = math.min(#nods, 3)
 
-			if nods and #nods > 0 then
-				-- min herd of 3
-				local iter = math.min(#nods, 3)
+			-- print("--- ankylosaurus at", minetest.pos_to_string(pos), iter)
 
-				-- print("--- ankylosaurus at", minetest.pos_to_string(pos), iter)
+			for n = 1, iter do
+				local pos2 = nods[random(#nods)]
+				local kid = random(4) == 1 and true or nil
 
-				for n = 1, iter do
-					local pos2 = nods[random(#nods)]
-					local kid = random(4) == 1 and true or nil
+				pos2.y = pos2.y + 2
 
-					pos2.y = pos2.y + 2
-
-					if minetest.get_node(pos2).name == "air" then
-						mobs:add_mob(pos2, {
-							name = "livingfloatlands:ankylosaurus", child = kid })
-					end
+				if minetest.get_node(pos2).name == "air" then
+					mobs:add_mob(pos2, {
+						name = "livingfloatlands:ankylosaurus", child = kid })
 				end
 			end
 		end
-	})
-end
+	end
+})
+
 
 mobs:register_egg("livingfloatlands:ankylosaurus", ("Ankylosaurus"), "aankylosaurus.png")
 

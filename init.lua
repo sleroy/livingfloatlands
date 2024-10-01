@@ -18,12 +18,18 @@ if naturalbiomes.settings.clear_ores then
 	minetest.clear_registered_ores()
 end
 
+-- MineClone2
+-- MineClone2 support
+
+
 local modname = "livingfloatlands"
 local modpath = minetest.get_modpath(modname)
 local mg_name = minetest.get_mapgen_setting("mg_name")
 
 -- Load support for intllib.
 local path = minetest.get_modpath(minetest.get_current_modname()) .. "/"
+
+dofile(path .. '/mod_support_mcl_aliases.lua')
 
 local S = minetest.get_translator and minetest.get_translator("livingfloatlands") or
 	dofile(path .. "intllib.lua")
@@ -222,12 +228,6 @@ function register_fencegate(name, def)
 			{ "group:stick", def.material, "group:stick" }
 		}
 	})
-end
-
--- MineClone2
--- MineClone2 support
-if minetest.get_modpath('mcl_core') and minetest.global_exists('mcl_core') then
-	dofile(path .. '/mod_support_mcl_aliases.lua')
 end
 
 -- Animals

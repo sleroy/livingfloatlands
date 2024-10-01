@@ -84,44 +84,44 @@ if minetest.get_modpath("ethereal") then
 		"mcl_core:sandstone" }
 end
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:velociraptor",
-		nodes = { "livingfloatlands:paleodesert_litter" },
-		neighbors = { "livingfloatlands:paleodesert_fern", "livingfloatlands:puzzlegrass" },
-		min_light = 0,
-		interval = 60,
-		active_object_count = 3,
-		chance = 2000, -- 15000
-		min_height = 0,
-		max_height = 31000,
 
-		on_spawn = function(self, pos)
-			local nods = minetest.find_nodes_in_area_under_air(
-				{ x = pos.x - 4, y = pos.y - 3, z = pos.z - 4 },
-				{ x = pos.x + 4, y = pos.y + 3, z = pos.z + 4 },
-				{ "livingfloatlands:paleodesert_litter" })
+mobs:spawn({
+	name = "livingfloatlands:velociraptor",
+	nodes = { "livingfloatlands:paleodesert_litter" },
+	neighbors = { "livingfloatlands:paleodesert_fern", "livingfloatlands:puzzlegrass" },
+	min_light = 0,
+	interval = 60,
 
-			if nods and #nods > 0 then
-				-- min herd of 3
-				local iter = math.min(#nods, 3)
+	chance = 2000, -- 15000
+	min_height = 0,
+	max_height = 31000,
 
-				-- print("--- velociraptor at", minetest.pos_to_string(pos), iter)
+	on_spawn = function(self, pos)
+		local nods = minetest.find_nodes_in_area_under_air(
+			{ x = pos.x - 4, y = pos.y - 3, z = pos.z - 4 },
+			{ x = pos.x + 4, y = pos.y + 3, z = pos.z + 4 },
+			{ "livingfloatlands:paleodesert_litter" })
 
-				for n = 1, iter do
-					local pos2 = nods[random(#nods)]
-					local kid = random(4) == 1 and true or nil
+		if nods and #nods > 0 then
+			-- min herd of 3
+			local iter = math.min(#nods, 3)
 
-					pos2.y = pos2.y + 2
+			-- print("--- velociraptor at", minetest.pos_to_string(pos), iter)
 
-					if minetest.get_node(pos2).name == "air" then
-						mobs:add_mob(pos2, {
-							name = "livingfloatlands:velociraptor", child = kid })
-					end
+			for n = 1, iter do
+				local pos2 = nods[random(#nods)]
+				local kid = random(4) == 1 and true or nil
+
+				pos2.y = pos2.y + 2
+
+				if minetest.get_node(pos2).name == "air" then
+					mobs:add_mob(pos2, {
+						name = "livingfloatlands:velociraptor", child = kid })
 				end
 			end
 		end
-	})
-end
+	end
+})
+
 
 mobs:register_egg("livingfloatlands:velociraptor", ("Velociraptor"), "avelociraptor.png")

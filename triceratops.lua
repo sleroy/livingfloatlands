@@ -82,44 +82,44 @@ if minetest.get_modpath("ethereal") then
 	spawn_on = { "ethereal:prairie_dirt", "ethereal:bamboo_dirt", "default:dry_dirt_with_dry_grass" }
 end
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:triceratops",
-		nodes = { "livingfloatlands:paleojungle_litter" },
-		neighbors = { "livingfloatlands:giantforest_grass3" },
-		min_light = 0,
-		interval = 60,
-		chance = 2000, -- 15000
-		active_object_count = 2,
-		min_height = 2,
-		max_height = 31000,
-		day_toggle = true,
-		on_spawn = function(self, pos)
-			local nods = minetest.find_nodes_in_area_under_air(
-				{ x = pos.x - 4, y = pos.y - 3, z = pos.z - 4 },
-				{ x = pos.x + 4, y = pos.y + 3, z = pos.z + 4 },
-				{ "livingfloatlands:paleojungle_litter" })
 
-			if nods and #nods > 0 then
-				-- min herd of 2
-				local iter = math.min(#nods, 2)
+mobs:spawn({
+	name = "livingfloatlands:triceratops",
+	nodes = { "livingfloatlands:paleojungle_litter" },
+	neighbors = { "livingfloatlands:giantforest_grass3" },
+	min_light = 0,
+	interval = 60,
+	chance = 2000, -- 15000
 
-				-- print("--- triceratop at", minetest.pos_to_string(pos), iter)
+	min_height = 2,
+	max_height = 31000,
+	day_toggle = true,
+	on_spawn = function(self, pos)
+		local nods = minetest.find_nodes_in_area_under_air(
+			{ x = pos.x - 4, y = pos.y - 3, z = pos.z - 4 },
+			{ x = pos.x + 4, y = pos.y + 3, z = pos.z + 4 },
+			{ "livingfloatlands:paleojungle_litter" })
 
-				for n = 1, iter do
-					local pos2 = nods[random(#nods)]
-					local kid = random(4) == 1 and true or nil
+		if nods and #nods > 0 then
+			-- min herd of 2
+			local iter = math.min(#nods, 2)
 
-					pos2.y = pos2.y + 2
+			-- print("--- triceratop at", minetest.pos_to_string(pos), iter)
 
-					if minetest.get_node(pos2).name == "air" then
-						mobs:add_mob(pos2, {
-							name = "livingfloatlands:triceratops", child = kid })
-					end
+			for n = 1, iter do
+				local pos2 = nods[random(#nods)]
+				local kid = random(4) == 1 and true or nil
+
+				pos2.y = pos2.y + 2
+
+				if minetest.get_node(pos2).name == "air" then
+					mobs:add_mob(pos2, {
+						name = "livingfloatlands:triceratops", child = kid })
 				end
 			end
 		end
-	})
-end
+	end
+})
+
 
 mobs:register_egg("livingfloatlands:triceratops", ("Triceratops"), "atriceratops.png")

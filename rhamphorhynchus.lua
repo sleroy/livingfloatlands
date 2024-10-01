@@ -78,19 +78,19 @@ if minetest.get_modpath("ethereal") then
 		"mcl_core:dirt_with_grass", "mcl_core:sand" }
 end
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:rhamphorhynchus",
-		nodes = { "livingfloatlands:giantforest_paleoredwood_wood", "livingfloatlands:paleojungle_litter" },
-		min_light = 0,
-		interval = 60,
-		chance = 200, -- 15000
-		active_object_count = 2,
-		min_height = 2,
-		max_height = 31000,
-		day_toggle = true,
-	})
-end
+
+mobs:spawn({
+	name = "livingfloatlands:rhamphorhynchus",
+	nodes = { "livingfloatlands:giantforest_paleoredwood_wood", "livingfloatlands:paleojungle_litter" },
+	min_light = 0,
+	interval = 60,
+	chance = 200, -- 15000
+
+	min_height = 2,
+	max_height = 31000,
+	day_toggle = true,
+})
+
 
 mobs:register_egg("livingfloatlands:rhamphorhynchus", ("Rhamphorhynchus"), "arhamphorhynchus.png")
 

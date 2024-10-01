@@ -78,18 +78,17 @@ if minetest.get_modpath("ethereal") then
 		"mcl_core:dirt_with_coniferous_litter" }
 end
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:lycaenops",
-		nodes = { "livingfloatlands:giantforest_litter" },
-		neighbors = { "livingfloatlands:giantforest_grass", "livingfloatlands:giantforest_grass2", "livingfloatlands:giantforest_grass3" },
-		min_light = 0,
-		interval = 60,
-		chance = 2000, -- 15000
-		min_height = 2,
-		max_height = 31000,
+mobs:spawn({
+	name = "livingfloatlands:lycaenops",
+	nodes = { "livingfloatlands:giantforest_litter" },
+	neighbors = { "livingfloatlands:giantforest_grass", "livingfloatlands:giantforest_grass2", "livingfloatlands:giantforest_grass3" },
+	min_light = 0,
+	interval = 60,
+	chance = 2000, -- 15000
+	min_height = 2,
+	max_height = 31000,
 
-	})
-end
+})
+
 
 mobs:register_egg("livingfloatlands:lycaenops", ("Lycaenops"), "alycaenops.png")

@@ -11,7 +11,7 @@ minetest.register_node("livingfloatlands:giantforest_litter", {
 			name = "default_dirt.png^livingfloatlands_giantforest_litter_side.png",
 			tileable_vertical = false
 		} },
-	groups = { crumbly = 3, soil = 1, spreading_dirt_type = 1 },
+	-- groups = { crumbly = 3, soil = 1, spreading_dirt_type = 1 },
 	drop = "mcl_core:dirt",
 	sounds = mcl_sounds.node_sound_dirt_defaults({
 		footstep = { name = "default_grass_footstep", gain = 0.25 },

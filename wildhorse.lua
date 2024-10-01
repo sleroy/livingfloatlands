@@ -78,44 +78,44 @@ if minetest.get_modpath("ethereal") then
 		"mcl_core:dirt_with_grass" }
 end
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:wildhorse",
-		nodes = { "livingfloatlands:coldsteppe_litter", "livingdesert:coldsteppe_ground2" },
-		neighbors = { "livingfloatlands:coldsteppe_grass", "livingfloatlands:coldsteppe_grass2", "livingfloatlands:coldsteppe_grass3", "livingdesert:coldsteppe_grass1", "livingdesert:coldsteppe_grass2", "livingdesert:coldsteppe_grass3" },
-		min_light = 0,
-		interval = 60,
-		active_object_count = 4,
-		chance = 2000, -- 15000
-		min_height = 5,
-		max_height = 31000,
 
-		on_spawn = function(self, pos)
-			local nods = minetest.find_nodes_in_area_under_air(
-				{ x = pos.x - 4, y = pos.y - 3, z = pos.z - 4 },
-				{ x = pos.x + 4, y = pos.y + 3, z = pos.z + 4 },
-				{ "livingfloatlands:coldsteppe_litter", "livingdesert:coldsteppe_ground2" })
+mobs:spawn({
+	name = "livingfloatlands:wildhorse",
+	nodes = { "livingfloatlands:coldsteppe_litter", "livingdesert:coldsteppe_ground2" },
+	neighbors = { "livingfloatlands:coldsteppe_grass", "livingfloatlands:coldsteppe_grass2", "livingfloatlands:coldsteppe_grass3", "livingdesert:coldsteppe_grass1", "livingdesert:coldsteppe_grass2", "livingdesert:coldsteppe_grass3" },
+	min_light = 0,
+	interval = 60,
 
-			if nods and #nods > 0 then
-				-- min herd of 5
-				local iter = math.min(#nods, 5)
+	chance = 2000, -- 15000
+	min_height = 1,
+	max_height = 31000,
 
-				-- print("--- wildhorse at", minetest.pos_to_string(pos), iter)
+	on_spawn = function(self, pos)
+		local nods = minetest.find_nodes_in_area_under_air(
+			{ x = pos.x - 4, y = pos.y - 3, z = pos.z - 4 },
+			{ x = pos.x + 4, y = pos.y + 3, z = pos.z + 4 },
+			{ "livingfloatlands:coldsteppe_litter", "livingdesert:coldsteppe_ground2" })
 
-				for n = 1, iter do
-					local pos2 = nods[random(#nods)]
-					local kid = random(4) == 1 and true or nil
+		if nods and #nods > 0 then
+			-- min herd of 5
+			local iter = math.min(#nods, 5)
 
-					pos2.y = pos2.y + 2
+			-- print("--- wildhorse at", minetest.pos_to_string(pos), iter)
 
-					if minetest.get_node(pos2).name == "air" then
-						mobs:add_mob(pos2, {
-							name = "livingfloatlands:wildhorse", child = kid })
-					end
+			for n = 1, iter do
+				local pos2 = nods[random(#nods)]
+				local kid = random(4) == 1 and true or nil
+
+				pos2.y = pos2.y + 2
+
+				if minetest.get_node(pos2).name == "air" then
+					mobs:add_mob(pos2, {
+						name = "livingfloatlands:wildhorse", child = kid })
 				end
 			end
 		end
-	})
-end
+	end
+})
+
 
 mobs:register_egg("livingfloatlands:wildhorse", S("Wild Horse"), "awildhorse.png")

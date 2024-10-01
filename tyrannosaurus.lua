@@ -85,19 +85,19 @@ if minetest.get_modpath("ethereal") then
 		"mcl_core:dirt_with_rainforest_litter", "mcl_core:sand" }
 end
 
-if not mobs.custom_spawn_livingfloatlands then
-	mobs:spawn({
-		name = "livingfloatlands:tyrannosaurus",
-		nodes = { "livingfloatlands:paleojungle_litter" },
-		neighbors = { "livingfloatlands:paleojungle_smallpalm" },
-		min_light = 0,
-		interval = 60,
-		active_object_count = 1,
-		chance = 2000, -- 15000
-		min_height = 3,
-		max_height = 31000,
 
-	})
-end
+mobs:spawn({
+	name = "livingfloatlands:tyrannosaurus",
+	nodes = { "livingfloatlands:paleojungle_litter" },
+	neighbors = { "livingfloatlands:paleojungle_smallpalm" },
+	min_light = 0,
+	interval = 60,
+
+	chance = 2000, -- 15000
+	min_height = 3,
+	max_height = 31000,
+
+})
+
 
 mobs:register_egg("livingfloatlands:tyrannosaurus", ("Tyrannosaurus"), "atyrannosaurus.png")
