@@ -59,7 +59,7 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 		die_rotate = true,
 	},
 
-	follow = { "default:apple", "default:dry_dirt_with_dry_grass", "farming:seed_wheat", "default:junglegrass", "farming:seed_oat", "livingfloatlands:paleodesert_joshua_sapling", "livingfloatlands:paleodesert_fern" },
+	follow = { "mcl_core:apple", "mcl_core:dry_dirt_with_dry_grass", "farming:seed_wheat", "mcl_core:junglegrass", "farming:seed_oat", "livingfloatlands:paleodesert_joshua_sapling", "livingfloatlands:paleodesert_fern" },
 	view_range = 10,
 
 	on_rightclick = function(self, clicker)
@@ -73,7 +73,7 @@ mobs:register_mob("livingfloatlands:ankylosaurus", {
 
 if minetest.get_modpath("ethereal") then
 	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:sand", "mcl_core:desert_sandstone",
-		"mcl_core:sandstone", "default:dry_dirt_with_dry_grass" }
+		"mcl_core:sandstone", "mcl_core:dry_dirt_with_dry_grass" }
 end
 
 if not mobs.custom_spawn_livingfloatlands then
