@@ -6,7 +6,7 @@ mobs:register_mob("livingfloatlands:triceratops", {
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
-	attack_animals = false,
+	attack_animals = true,
 	group_attack = true,
 	attack_monsters = true,
 	reach = 3,

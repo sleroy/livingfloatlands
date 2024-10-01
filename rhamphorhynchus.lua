@@ -6,6 +6,7 @@ mobs:register_mob("livingfloatlands:rhamphorhynchus", {
 	passive = true,
 	attack_type = "dogfight",
 	attack_animals = true,
+	attack_players = true,
 	reach = 2,
 	damage = 1,
 	hp_min = 5,

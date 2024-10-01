@@ -5,6 +5,7 @@ mobs:register_mob("livingfloatlands:parasaurolophus", {
 	type = "animal",
 	passive = true,
 	attack_type = "dogfight",
+	attack_players = true,
 	attack_animals = false,
 	reach = 6,
 	damage = 20,

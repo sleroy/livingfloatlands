@@ -5,6 +5,7 @@ mobs:register_mob("livingfloatlands:smilodon", {
 	passive = false,
 	attack_type = "dogfight",
 	attack_animals = true,
+	attack_monsters = true,
 	reach = 2,
 	damage = 13,
 	hp_min = 75,

@@ -6,6 +6,7 @@ mobs:register_mob("livingfloatlands:gigantopithecus", {
 	passive = false,
 	attack_type = "dogfight",
 	group_attack = true,
+	attack_players = true,
 	attack_animals = false,
 	attack_npcs = false,
 	attack_monsters = true,

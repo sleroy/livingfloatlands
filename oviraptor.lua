@@ -6,6 +6,7 @@ mobs:register_mob("livingfloatlands:oviraptor", {
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
+	attack_players = true,
 	attack_animals = true,
 	attack_monsters = true,
 	reach = 2,
