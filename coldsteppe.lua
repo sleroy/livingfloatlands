@@ -1150,9 +1150,17 @@ minetest.register_decoration({
 
 -- Bricks slabs and walls
 
-mcl_walls.register_wall(":livingfloatlands:coldsteppe_brick_wall", S "Coldsteppe Granite Brick Wall",
-	"livingfloatlands_coldsteppe_rock_brick.png",
-	"livingfloatlands:coldsteppe_brick_wall", mcl_sounds.node_sound_stone_defaults())
+-- mcl_walls.register_wall("mymod:granitewall", "Granite Wall", {"mymod_granite.png"}, "mymod_granite_wall_inv.png")
+
+mcl_walls.register_wall(
+    'livingfloatlands:coldsteppe_brick_wall',
+    S("Coldsteppe Granite Brick Wall"),
+    'livingfloatlands:coldsteppe_brick_wall',
+    { 'livingfloatlands_coldsteppe_rock_brick.png' },
+    nil,
+    nil,
+    mcl_sounds.node_sound_stone_defaults()
+)
 
 mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_rock_brick",
@@ -1190,9 +1198,17 @@ minetest.register_craft({
 
 })
 
-mcl_walls.register_wall(":livingfloatlands:coldsteppe_brick2_wall", S "Coldsteppe Limestone Brick Wall",
-	"livingfloatlands_coldsteppe_rock2_brick.png",
-	"livingfloatlands:coldsteppe_brick2_wall", mcl_sounds.node_sound_stone_defaults())
+
+mcl_walls.register_wall(
+	'livingfloatlands:coldsteppe_brick2_wall',
+	S("Coldsteppe Limestone Brick Wall"),
+	'livingfloatlands:coldsteppe_brick2_wall',
+	{ 'livingfloatlands_coldsteppe_rock2_brick.png' },
+	nil,
+	nil,
+	mcl_sounds.node_sound_stone_defaults()
+)
+
 
 mcl_stairs.register_stair_and_slab(
 	"livingfloatlands_coldsteppe_rock2_brick",
