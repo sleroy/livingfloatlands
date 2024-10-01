@@ -7,6 +7,8 @@ mobs:register_mob("livingfloatlands:gastornis", {
 	attack_type = "dogfight",
 	group_attack = true,
 	attack_monsters = true,
+	attack_players = true,
+	attack_animals = true,
 	owner_loyal = true,
 	attack_npcs = false,
 	reach = 2,

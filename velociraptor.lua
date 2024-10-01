@@ -80,7 +80,7 @@ mobs:register_mob("livingfloatlands:velociraptor", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "default:desert_sand", "mcl_core:desert_sandstone",
+	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:desert_sand", "mcl_core:desert_sandstone",
 		"mcl_core:sandstone" }
 end
 

@@ -72,7 +72,7 @@ mobs:register_mob("livingfloatlands:smilodon", {
 
 if minetest.get_modpath("ethereal") then
 	spawn_on = { "ethereal:crystal_dirt", "ethereal:gray_dirt", "livingfloatlands:permafrost_with_moss",
-		"mcl_core:dirt_with_snow", "default:snow" }
+		"mcl_core:dirt_with_snow", "mcl_core:snow" }
 end
 
 

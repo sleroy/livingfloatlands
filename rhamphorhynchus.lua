@@ -5,7 +5,7 @@ mobs:register_mob("livingfloatlands:rhamphorhynchus", {
 	type = "animal",
 	passive = true,
 	attack_type = "dogfight",
-	attack_animals = false,
+	attack_animals = true,
 	reach = 2,
 	damage = 1,
 	hp_min = 5,
@@ -54,7 +54,7 @@ mobs:register_mob("livingfloatlands:rhamphorhynchus", {
 		die_rotate = true,
 	},
 
-	fly_in = { "air", "default:water_source", "default:river_water_source" },
+	fly_in = { "air", "mcl_core:water_source", "mcl_core:river_water_source" },
 	floats = 0,
 	follow = {
 		"animalworld:rawfish", "mobs:clownfish_raw", "mobs:bluefish_raw", "fishing:bait_worm", "fishing:clownfish_raw",

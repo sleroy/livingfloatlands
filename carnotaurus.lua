@@ -5,15 +5,18 @@ mobs:register_mob("livingfloatlands:carnotaurus", {
 	passive = false,
 	attack_type = "dogfight",
 	attack_animals = true,
-	reach = 6,
+	attack_monsters = true,
+	attack_players = true,
+	attack_npcs = true,
+	reach = 8,
 	damage = 20,
 	hp_min = 100,
 	hp_max = 350,
 	armor = 100,
-	collisionbox = { -1.0, -0.01, -1.0, 1.0, 3.0, 1.0 },
+	collisionbox = { -2, -0.02, -2, 3, 6, 2 },
 	visual = "mesh",
 	mesh = "Carnotaurus5.b3d",
-	visual_size = { x = 1.0, y = 1.0 },
+	visual_size = { x = 2, y = 2 },
 	textures = {
 		{ "texturecarnotaurus.png" },
 		{ "texturecarnotaurus2.png" },
@@ -31,7 +34,7 @@ mobs:register_mob("livingfloatlands:carnotaurus", {
 	stay_near = { { "livingfloatlands:paleojungle_litter_leaves", "livingfloatlands:paleojungle_smallpalm", "livingfloatlands:giantforest_grass3", "livingfloatlands:paleojungle_ferngrass" }, 6 },
 	jump = false,
 	jump_height = 6,
-	stepheight = 2,
+	stepheight = 3,
 	knock_back = false,
 	drops = {
 		{ name = "livingfloatlands:theropodraw", chance = 1, min = 1, max = 1 },
@@ -72,7 +75,7 @@ mobs:register_mob("livingfloatlands:carnotaurus", {
 		"livingfloatlands:sauropodraw", "animalworld:raw_athropod", "animalworld:whalemeat_raw", "animalworld:rabbit_raw",
 		"nativevillages:chicken_raw", "mobs:meat_raw", "animalworld:pork_raw", "people:mutton:raw"
 	},
-	view_range = 20,
+	view_range = 30,
 
 	on_rightclick = function(self, clicker)
 		-- feed or tame
@@ -84,7 +87,7 @@ mobs:register_mob("livingfloatlands:carnotaurus", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "default:dry_dirt_with_dry_grass" }
+	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:dry_dirt_with_dry_grass" }
 end
 
 mobs:spawn({
@@ -96,7 +99,6 @@ mobs:spawn({
 	chance = 2000, -- 15000
 	min_height = 0,
 	max_height = 31000,
-
 })
 
 

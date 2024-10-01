@@ -81,7 +81,7 @@ mobs:register_mob("livingfloatlands:tyrannosaurus", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "default:dry_dirt_with_dry_grass",
+	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:dry_dirt_with_dry_grass",
 		"mcl_core:dirt_with_rainforest_litter", "mcl_core:sand" }
 end
 

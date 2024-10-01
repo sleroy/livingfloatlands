@@ -61,7 +61,7 @@ mobs:register_mob("livingfloatlands:triceratops", {
 
 	follow = {
 		"ethereal:banana_single", "farming:corn_cob", "farming:cabbage",
-		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
+		"mcl_core:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
 		"ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "livingfloatlands:paleojungle_clubmoss_fruit",
 		"livingfloatlands:giantforest_oaknut", "livingfloatlands:paleojungle_ferngrass"
 	},
@@ -79,7 +79,7 @@ mobs:register_mob("livingfloatlands:triceratops", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:prairie_dirt", "ethereal:bamboo_dirt", "default:dry_dirt_with_dry_grass" }
+	spawn_on = { "ethereal:prairie_dirt", "ethereal:bamboo_dirt", "mcl_core:dry_dirt_with_dry_grass" }
 end
 
 

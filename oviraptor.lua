@@ -6,7 +6,7 @@ mobs:register_mob("livingfloatlands:oviraptor", {
 	type = "animal",
 	passive = false,
 	attack_type = "dogfight",
-	attack_animals = false,
+	attack_animals = true,
 	attack_monsters = true,
 	reach = 2,
 	damage = 6,
@@ -61,7 +61,7 @@ mobs:register_mob("livingfloatlands:oviraptor", {
 
 	follow = {
 		"ethereal:fish_raw", "animalworld:rawfish", "mobs_fish:tropical", "mobs:meat_raw", "animalworld:rabbit_raw",
-		"animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "default:apple", "farming:potato",
+		"animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "mcl_core:apple", "farming:potato",
 		"farming:melon_slice", "farming:cucumber", "farming:cabbage", "farming:lettuce", "farming:bread",
 		"livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw",
 		"livingfloatlands:paleodesert_joshua_sapling", "livingfloatlands:paleodesert_fern"
@@ -77,7 +77,7 @@ mobs:register_mob("livingfloatlands:oviraptor", {
 })
 
 
-spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "default:desert_sand", "mcl_core:desert_sandstone",
+spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:desert_sand", "mcl_core:desert_sandstone",
 	"mcl_core:sandstone" }
 
 

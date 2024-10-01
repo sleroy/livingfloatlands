@@ -57,7 +57,7 @@ mobs:register_mob("livingfloatlands:cavebear", {
 	follow = {
 		"ethereal:fish_raw", "animalworld:rawfish", "mobs_fish:tropical",
 		"mobs:meat_raw", "animalworld:rabbit_raw", "animalworld:pork_raw", "water_life:meat_raw",
-		"animalworld:chicken_raw", "default:apple", "farming:potato", "ethereal:banana_bread", "farming:melon_slice",
+		"animalworld:chicken_raw", "mcl_core:apple", "farming:potato", "ethereal:banana_bread", "farming:melon_slice",
 		"farming:carrot", "farming:seed_rice", "farming:corn", "livingfloatlands:ornithischiaraw",
 		"livingfloatlands:sauropodraw", "livingfloatlands:theropodraw", "livingfloatlands:roasted_pine_nuts",
 		"livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling",

@@ -62,8 +62,8 @@ mobs:register_mob("livingfloatlands:stegosaurus", {
 	},
 
 	follow = {
-		"default:grass_3", "default:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat",
-		"default:junglegrass", "livingfloatlands:paleojungle_clubmoss_fruit", "livingfloatlands:giantforest_oaknut",
+		"mcl_core:grass_3", "mcl_core:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat",
+		"mcl_core:junglegrass", "livingfloatlands:paleojungle_clubmoss_fruit", "livingfloatlands:giantforest_oaknut",
 		"livingfloatlands:paleojungle_ferngrass"
 	},
 	view_range = 15,

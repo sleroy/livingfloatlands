@@ -58,8 +58,9 @@ mobs:register_mob("livingfloatlands:parasaurolophus", {
 	},
 
 	follow = {
-		"default:dry_shrub ", "default:grass_1", "ethereal:dry_shrub", "farming:seed_wheat", "farming:seed_rye",
-		"default:junglegrass", "default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes",
+		"mcl_core:dry_shrub ", "mcl_core:grass_1", "ethereal:dry_shrub", "farming:seed_wheat", "farming:seed_rye",
+		"mcl_core:junglegrass", "mcl_core:apple", "farming:cabbage", "farming:carrot", "farming:cucumber",
+		"farming:grapes",
 		"farming:pineapple", "ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice",
 		"livingfloatlands:paleojungle_clubmoss_fruit", "livingfloatlands:giantforest_oaknut",
 		"livingfloatlands:paleojungle_ferngrass"

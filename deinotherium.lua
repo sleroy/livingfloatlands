@@ -7,6 +7,7 @@ mobs:register_mob("livingfloatlands:deinotherium", {
 	attack_type = "dogfight",
 	attack_animals = false,
 	attack_monsters = true,
+	attack_players = true,
 	reach = 4,
 	damage = 20,
 	hp_min = 175,
@@ -59,7 +60,7 @@ mobs:register_mob("livingfloatlands:deinotherium", {
 	},
 	follow = {
 		"ethereal:banana_single", "farming:corn_cob", "farming:cabbage",
-		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
+		"mcl_core:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
 		"ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "livingfloatlands:paleojungle_clubmoss_fruit",
 		"livingfloatlands:giantforest_oaknut", "livingfloatlands:paleojungle_ferngrass"
 	},

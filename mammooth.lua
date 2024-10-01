@@ -61,7 +61,7 @@ mobs:register_mob("livingfloatlands:mammooth", {
 
 	follow = {
 		"ethereal:banana_single", "farming:corn_cob", "farming:cabbage",
-		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
+		"mcl_core:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
 		"ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "livingfloatlands:coldsteppe_pine3_sapling",
 		"livingfloatlands:coldsteppe_pine2_sapling", "livingfloatlands:coldsteppe_pine_sapling",
 		"livingfloatlands:coldsteppe_bulbous_chervil_root"
@@ -81,7 +81,7 @@ mobs:register_mob("livingfloatlands:mammooth", {
 
 if minetest.get_modpath("ethereal") then
 	spawn_on = { "ethereal:crystal_dirt", "ethereal:gray_dirt", "livingfloatlands:permafrost_with_moss",
-		"mcl_core:dirt_with_snow", "default:snow" }
+		"mcl_core:dirt_with_snow", "mcl_core:snow" }
 end
 
 mobs:spawn({

@@ -7,6 +7,8 @@ mobs:register_mob("livingfloatlands:entelodon", {
 	attack_type = "dogfight",
 	attack_animals = true,
 	attack_monsters = true,
+	attack_players = true,
+	attack_npcs = true,
 	group_attack = true,
 	reach = 3,
 	damage = 13,
@@ -60,7 +62,7 @@ mobs:register_mob("livingfloatlands:entelodon", {
 
 	follow = {
 		"ethereal:banana_single", "farming:corn_cob", "farming:cabbage",
-		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
+		"mcl_core:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
 		"ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "mobs:meat_raw", "animalworld:rabbit_raw",
 		"animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "livingfloatlands:ornithischiaraw",
 		"livingfloatlands:sauropodraw", "livingfloatlands:theropodraw", "livingfloatlands:giantforest_oaknut"
@@ -79,7 +81,7 @@ mobs:register_mob("livingfloatlands:entelodon", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "default:desert_sand", "default:dry_dirt_with_dry_grass" }
+	spawn_on = { "ethereal:prairie_dirt", "ethereal:dry_dirt", "mcl_core:desert_sand", "mcl_core:dry_dirt_with_dry_grass" }
 end
 
 mobs:spawn({

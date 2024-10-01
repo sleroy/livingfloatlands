@@ -60,9 +60,9 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
 
 	follow = {
 		"ethereal:banana_single", "farming:corn_cob", "farming:cabbage",
-		"default:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
-		"ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "default:grass_3", "default:dry_grass_3",
-		"ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat", "default:junglegrass",
+		"mcl_core:apple", "farming:cabbage", "farming:carrot", "farming:cucumber", "farming:grapes", "farming:pineapple",
+		"ethereal:orange", "ethereal:coconut", "ethereal:coconut_slice", "mcl_core:grass_3", "mcl_core:dry_grass_3",
+		"ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat", "mcl_core:junglegrass",
 		"livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling",
 		"livingfloatlands:coldsteppe_pine_sapling", "livingfloatlands:coldsteppe_bulbous_chervil_root"
 	},
@@ -81,7 +81,7 @@ mobs:register_mob("livingfloatlands:woollyrhino", {
 
 if minetest.get_modpath("ethereal") then
 	spawn_on = { "ethereal:mushroom_dirt", "ethereal:crystal_dirt", "livingfloatlands:permafrost_with_moss",
-		"mcl_core:dirt_with_snow", "default:snow" }
+		"mcl_core:dirt_with_snow", "mcl_core:snow" }
 end
 
 

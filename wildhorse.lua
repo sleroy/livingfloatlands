@@ -57,8 +57,8 @@ mobs:register_mob("livingfloatlands:wildhorse", {
 	},
 
 	follow = {
-		"default:grass_3", "default:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat",
-		"default:junglegrass", "livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling",
+		"mcl_core:grass_3", "mcl_core:dry_grass_3", "ethereal:dry_shrub", "farming:lettuce", "farming:seed_wheat",
+		"mcl_core:junglegrass", "livingfloatlands:coldsteppe_pine3_sapling", "livingfloatlands:coldsteppe_pine2_sapling",
 		"livingfloatlands:coldsteppe_pine_sapling", "livingfloatlands:coldsteppe_bulbous_chervil_root",
 		"livingdesert:coldsteppe_grass1"
 	},
@@ -74,7 +74,7 @@ mobs:register_mob("livingfloatlands:wildhorse", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:crystal_dirt", "ethereal:gray_dirt", "default:dry_dirt_with_dry_grass",
+	spawn_on = { "ethereal:crystal_dirt", "ethereal:gray_dirt", "mcl_core:dry_dirt_with_dry_grass",
 		"mcl_core:dirt_with_grass" }
 end
 

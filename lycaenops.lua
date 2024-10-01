@@ -5,6 +5,7 @@ mobs:register_mob("livingfloatlands:lycaenops", {
 	passive = false,
 	attack_type = "dogfight",
 	attack_animals = true,
+	attack_players = true,
 	reach = 2,
 	damage = 10,
 	hp_min = 25,
@@ -74,7 +75,7 @@ mobs:register_mob("livingfloatlands:lycaenops", {
 
 
 if minetest.get_modpath("ethereal") then
-	spawn_on = { "ethereal:gray_dirt", "dry:dry_dirt", "mcl_core:dirt_with_grass", "default:dry_dirt_with_dry_grass",
+	spawn_on = { "ethereal:gray_dirt", "dry:dry_dirt", "mcl_core:dirt_with_grass", "mcl_core:dry_dirt_with_dry_grass",
 		"mcl_core:dirt_with_coniferous_litter" }
 end
 
