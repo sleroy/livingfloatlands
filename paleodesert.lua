@@ -94,9 +94,6 @@ minetest.register_node("livingfloatlands:puzzlegrass", {
 	groups = { snappy = 3, flammable = 2 },
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-	after_dig_node = function(pos, node, metadata, digger)
-		default.dig_up(pos, node, digger)
-	end,
 })
 
 minetest.register_node("livingfloatlands:puzzlegrass_top", {
@@ -116,9 +113,6 @@ minetest.register_node("livingfloatlands:puzzlegrass_top", {
 	groups = { snappy = 3, flammable = 2 },
 	sounds = mcl_sounds.node_sound_leaves_defaults(),
 
-	after_dig_node = function(pos, node, metadata, digger)
-		default.dig_up(pos, node, digger)
-	end,
 })
 
 minetest.register_decoration({

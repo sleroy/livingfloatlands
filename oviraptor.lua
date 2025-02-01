@@ -62,7 +62,7 @@ mobs:register_mob("livingfloatlands:oviraptor", {
 
 	follow = {
 		"ethereal:fish_raw", "animalworld:rawfish", "mobs_fish:tropical", "mobs:meat_raw", "animalworld:rabbit_raw",
-		"animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "mcl_core:apple", "farming:potato",
+		"animalworld:pork_raw", "water_life:meat_raw", "animalworld:chicken_raw", "mcl_core:apple", "mcl_farming:potato",
 		"farming:melon_slice", "farming:cucumber", "farming:cabbage", "farming:lettuce", "farming:bread",
 		"livingfloatlands:ornithischiaraw", "livingfloatlands:sauropodraw", "livingfloatlands:theropodraw",
 		"livingfloatlands:paleodesert_joshua_sapling", "livingfloatlands:paleodesert_fern"
